@@ -306,8 +306,7 @@ public class MasterClear extends OptionsMenuFragment
         final EnforcedAdmin admin = RestrictedLockUtils.checkIfRestrictionEnforced(context,
                 UserManager.DISALLOW_FACTORY_RESET, UserHandle.myUserId());
         final UserManager um = UserManager.get(context);
-        final boolean disallow = !um.isAdminUser() || RestrictedLockUtils.hasBaseUserRestriction(
-                context, UserManager.DISALLOW_FACTORY_RESET, UserHandle.myUserId());
+        final boolean disallow = true;
         if (disallow && !Utils.isCarrierDemoUser(context)) {
             return inflater.inflate(R.layout.master_clear_disallowed_screen, null);
         } else if (admin != null) {
